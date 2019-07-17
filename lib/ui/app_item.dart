@@ -8,7 +8,8 @@ class AppItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext buildContext) {
-    return Container(alignment: Alignment.topCenter,
+    return Container(
+      // height: 80,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
