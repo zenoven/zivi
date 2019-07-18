@@ -20,10 +20,12 @@ class Home extends StatelessWidget {
       tabBuilder: (BuildContext ctx, int i) {
         return CupertinoTabView(
           builder: (BuildContext ctx) {
+            var widgetBuilder = Config.tabs[i]['widget'];
+            print(widgetBuilder);
             return CupertinoPageScaffold(
               child: Container(
                 padding: Style.gutters['all'],
-                child: Center(child: Text('hello, $i')),
+                child: widgetBuilder(ctx),
               ),
             );
           },

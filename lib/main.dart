@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:zivi/screen/home.dart';
 import 'package:zivi/config.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         DefaultWidgetsLocalizations.delegate,
       ],
       title: Config.appName,
-      home: Config.routes['home'](context),
+      home: Home(),
       routes: Config.routes,
     );
   }

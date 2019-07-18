@@ -1,8 +1,9 @@
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:zivi/screen/home.dart';
+import 'package:zivi/screen/messages.dart';
 import 'package:zivi/screen/apps.dart';
+import 'package:zivi/screen/settings.dart';
 
 typedef RouteBuilder = Widget Function(BuildContext buildContext);
 
@@ -11,22 +12,22 @@ abstract class Config {
   static final appDesc = 'Daily app launcher written with Flutter and dart.';
   static final views = <Map<String, Map<String, dynamic>>>[
     {
-      'home': {
-        'widget': (BuildContext buildContext) => new Home(),
-        'icon': Icon(Icons.home),
+      'messages': {
+        'widget': (BuildContext buildContext) => new Messages(),
+        'icon': Icon(Icons.alternate_email),
         'title': 'Messages',
       }
     },
     {
-      'summary': {
+      'apps': {
         'widget': (BuildContext buildContext) => new Apps(),
         'icon': Icon(Icons.apps),
         'title': 'APPs',
       }
     },
     {
-      'apps': {
-        'widget': (BuildContext buildContext) => new Apps(),
+      'settings': {
+        'widget': (BuildContext buildContext) => new Settings(),
         'icon': Icon(Icons.settings),
         'title': 'Settings',
       }

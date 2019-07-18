@@ -15,19 +15,14 @@ getFakeAppItems({count = 50}) {
 class Apps extends StatelessWidget {
   @override
   Widget build(BuildContext ctx) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('zivi'),
-      ),
-      body: Container(
-        padding: Style.gutters['all'],
-        child: GridView(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              mainAxisSpacing: Style.gutter * 1.5,
-              crossAxisSpacing: Style.gutter),
-          children: getFakeAppItems(),
-        ),
+    return Container(
+      padding: Style.gutters['all'],
+      child: GridView(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 4,
+            mainAxisSpacing: Style.gutter * 1.5,
+            crossAxisSpacing: Style.gutter),
+        children: getFakeAppItems(),
       ),
     );
   }
