@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:zivi/const.dart';
+import 'package:zivi/config.dart';
 import 'package:zivi/ui/app_item.dart';
 // import 'package:provider/provider.dart';
 
@@ -20,12 +20,12 @@ class Apps extends StatelessWidget {
         title: Text('zivi'),
       ),
       body: Container(
-        padding: gutters['all'],
+        padding: Style.gutters['all'],
         child: GridView(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 4,
-              mainAxisSpacing: gutter * 1.5,
-              crossAxisSpacing: gutter),
+              mainAxisSpacing: Style.gutter * 1.5,
+              crossAxisSpacing: Style.gutter),
           children: getFakeAppItems(),
         ),
       ),
