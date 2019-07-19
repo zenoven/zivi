@@ -4,7 +4,7 @@ import 'package:zivi/config.dart';
 import 'package:zivi/ui/app_item.dart';
 // import 'package:provider/provider.dart';
 
-getFakeAppItems({count = 50}) {
+getFakeAppItems({count = 3}) {
   List<AppItem> items = [];
   for (int i = 0; i < count; i++) {
     items.add(AppItem('App ${i+1}', Icon(Icons.linked_camera)));

@@ -8,7 +8,7 @@ final _bottomBarItems = Config.tabs.map((tab) {
 
 class Home extends StatelessWidget {
   CupertinoTabController _tabController = CupertinoTabController(
-    initialIndex: 1,
+    initialIndex: 0,
   );
   @override
   Widget build(BuildContext buildContext) {
@@ -20,11 +20,13 @@ class Home extends StatelessWidget {
       tabBuilder: (BuildContext ctx, int i) {
         return CupertinoTabView(
           builder: (BuildContext ctx) {
-            var widgetBuilder = Config.tabs[i]['widget'];
-            print(widgetBuilder);
+            var item = Config.tabs[i];
+            var widgetBuilder = item['widget'];
             return CupertinoPageScaffold(
+              navigationBar: CupertinoNavigationBar(
+                middle: Text(item['title']),
+              ),
               child: Container(
-                padding: Style.gutters['all'],
                 child: widgetBuilder(ctx),
               ),
             );
