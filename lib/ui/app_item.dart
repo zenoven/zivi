@@ -1,18 +1,27 @@
 import 'package:flutter/cupertino.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+_launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 
 class AppItem extends StatelessWidget {
   final String title;
   final Icon icon;
-  final String type;
+  final String url;
 
-  AppItem(this.title, this.icon, {this.type = 'url'});
+  AppItem(this.title, this.icon, {this.url});
 
   @override
   Widget build(BuildContext buildContext) {
     return Container(
       child: GestureDetector(
         onTap: () {
-          if (type == 'url') {}
+          _launchURL(url);
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

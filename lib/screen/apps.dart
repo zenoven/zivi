@@ -7,7 +7,14 @@ import 'package:zivi/ui/app_item.dart';
 getFakeAppItems({count = 3}) {
   List<AppItem> items = [];
   for (int i = 0; i < count; i++) {
-    items.add(AppItem('App ${i+1}', Icon(Icons.linked_camera)));
+    items.add(
+      AppItem(
+        'App ${i+1}',
+        Icon(Icons.linked_camera),
+        url: 'http://www.baidu.com',
+      ),
+
+    );
   }
   return items;
 }
