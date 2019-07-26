@@ -4,18 +4,34 @@ import 'package:zivi/config.dart';
 import 'package:zivi/ui/app_item.dart';
 // import 'package:provider/provider.dart';
 
+final wechat = [
+  AppItem(
+    '微信扫一扫',
+    Icon(Icons.chat_bubble_outline),
+    url: 'weixin://scanqrcode',
+  ),
+];
+final alipay = [
+  AppItem(
+    '付款码',
+    Icon(Icons.chat_bubble_outline),
+    url: 'alipayqr://platformapi/startapp?saId=20000056',
+  ),
+  AppItem(
+    '转账',
+    Icon(Icons.chat_bubble_outline),
+    url: 'alipayqr://platformapi/startapp?saId=09999988',
+  ),
+  AppItem(
+    '扫一扫',
+    Icon(Icons.chat_bubble_outline),
+    url: 'alipayqr://platformapi/startapp?saId=10000007',
+  ),
+];
 getFakeAppItems({count = 3}) {
   List<AppItem> items = [];
-  for (int i = 0; i < count; i++) {
-    items.add(
-      AppItem(
-        'App ${i+1}',
-        Icon(Icons.linked_camera),
-        url: 'http://www.baidu.com',
-      ),
-
-    );
-  }
+  items.addAll(wechat);
+  items.addAll(alipay);
   return items;
 }
 
@@ -26,7 +42,7 @@ class Apps extends StatelessWidget {
       padding: Style.gutters['all'],
       child: GridView(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 4,
+            crossAxisCount: 3,
             mainAxisSpacing: Style.gutter * 1.5,
             crossAxisSpacing: Style.gutter),
         children: getFakeAppItems(),
