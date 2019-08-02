@@ -1,13 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-_launchURL(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url, forceWebView: true);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
+import 'package:zivi/utils.dart';
 
 class AppItem extends StatelessWidget {
   final String title;
@@ -20,8 +12,9 @@ class AppItem extends StatelessWidget {
   Widget build(BuildContext buildContext) {
     return Container(
       child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
         onTap: () {
-          _launchURL(url);
+          launchURL(url);
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
