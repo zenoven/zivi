@@ -11,7 +11,7 @@ class AppItem extends StatelessWidget {
 
   AppItem(this.title, this.iconPath, {this.url});
 
-  dynamic getIcon(String imageFilePath, {double width = 64.0, double height = 64.0}) {
+  dynamic getIcon(String imageFilePath, {double width = 48.0, double height = 48.0}) {
     bool isSvg = extension(imageFilePath) == '.svg';
     if (isSvg) {
       return SvgPicture.asset(
@@ -39,11 +39,14 @@ class AppItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             ClipRRect(
-
               child: getIcon(iconPath),
               borderRadius: BorderRadius.circular(5.0),
             ),
-            Text(title),
+            Text(
+              title,
+              overflow: TextOverflow.clip,
+              softWrap: false,
+            ),
           ],
         ),
       ),

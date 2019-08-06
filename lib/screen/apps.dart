@@ -42,9 +42,10 @@ class Apps extends StatelessWidget {
       padding: Style.gutters['all'],
       child: GridView(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            mainAxisSpacing: Style.gutter * 1.5,
-            crossAxisSpacing: Style.gutter),
+          crossAxisCount: 4,
+          mainAxisSpacing: Style.gutter,
+          crossAxisSpacing: 0,
+        ),
         children: getFakeAppItems(),
       ),
     );
