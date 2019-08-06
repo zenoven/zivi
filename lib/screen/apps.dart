@@ -7,26 +7,26 @@ import 'package:zivi/ui/app_item.dart';
 final wechat = [
   AppItem(
     '微信扫一扫',
-    Icon(Icons.chat_bubble_outline),
+    'assets/images/wechat.svg',
     url: 'weixin://scanqrcode',
   ),
 ];
 final alipay = [
   AppItem(
     '付款码',
-    Icon(Icons.chat_bubble_outline),
+    'assets/images/alipay.svg',
     url: 'alipayqr://platformapi/startapp?saId=20000056',
   ),
-  AppItem(
-    '转账',
-    Icon(Icons.chat_bubble_outline),
-    url: 'alipayqr://platformapi/startapp?saId=09999988',
-  ),
-  AppItem(
-    '扫一扫',
-    Icon(Icons.chat_bubble_outline),
-    url: 'alipayqr://platformapi/startapp?saId=10000007',
-  ),
+  // AppItem(
+  //   '转账',
+  //   Icon(Icons.chat_bubble_outline),
+  //   url: 'alipayqr://platformapi/startapp?saId=09999988',
+  // ),
+  // AppItem(
+  //   '扫一扫',
+  //   Icon(Icons.chat_bubble_outline),
+  //   url: 'alipayqr://platformapi/startapp?saId=10000007',
+  // ),
 ];
 getFakeAppItems({count = 3}) {
   List<AppItem> items = [];
